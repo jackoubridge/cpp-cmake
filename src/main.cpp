@@ -1,7 +1,10 @@
-#include "mylib.h"
+#include "main.h"
 
 int main()
 {
-    sayHello();
-    return 0;
+	std::thread t1 (sayHello, 1);
+	std::thread t2 (sayHello, 2);
+	t1.join();
+	t2.join();
+	return 0;
 }

@@ -5,7 +5,9 @@ project(my_app)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(mylib SHARED src/mylib.cpp)
+add_library(mylib SHARED mylib/mylib.cpp)
+
+target_include_directories(mylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mylib)
 
 add_executable(my_app src/main.cpp)
 
