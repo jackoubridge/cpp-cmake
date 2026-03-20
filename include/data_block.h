@@ -4,4 +4,5 @@
 struct DataBlock
 {
     std::vector<float> data;
+    float sampleRate;
 };

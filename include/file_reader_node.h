@@ -1,11 +1,13 @@
 #pragma once
 #include <oneapi/tbb.h>
+#include <fstream>
 #include "data_block.h"
+#include <iostream>
 
-class GeneratorNode
+class FileReaderNode
 {
 public:
     tbb::flow::input_node<DataBlock> node;
 
-    GeneratorNode(tbb::flow::graph& g);
+    FileReaderNode(tbb::flow::graph& g);
 };

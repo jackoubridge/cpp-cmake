@@ -1,4 +1,4 @@
 #include <iostream>
 #include <oneapi/tbb.h>
-#include "generator_node.h"
-#include "print_node.h"
+#include "file_reader_node.h"
+#include "file_writer_node.h"

@@ -1,11 +1,12 @@
 #pragma once
 #include <oneapi/tbb.h>
 #include "data_block.h"
+#include <fstream>
 
-class PrintNode
+class FileWriterNode
 {
 public:
     tbb::flow::function_node<DataBlock> node;
 
-    PrintNode(tbb::flow::graph& g);
+    FileWriterNode(tbb::flow::graph& g);
 };

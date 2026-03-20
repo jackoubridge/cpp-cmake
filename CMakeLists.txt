@@ -9,10 +9,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(my_app
     src/main.cpp
-    src/generator_node.cpp
-    src/print_node.cpp
+    src/file_reader_node.cpp
+    src/file_writer_node.cpp
 )
 
 target_include_directories(my_app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(my_app PRIVATE TBB::tbb)
+
+add_custom_command(TARGET my_app POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_SOURCE_DIR}/tone.raw
+        $<TARGET_FILE_DIR:my_app>/tone.raw
+)

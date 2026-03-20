@@ -4,12 +4,12 @@ int main()
 {
     tbb::flow::graph g;
 
-    GeneratorNode generator(g);
-    PrintNode printer(g);
+    FileReaderNode fileReader(g);
+    FileWriterNode fileWriter(g);
 
-    make_edge(generator.node, printer.node);
+    make_edge(fileReader.node, fileWriter.node);
 
-    generator.node.activate();
+    fileReader.node.activate();
 
     g.wait_for_all();
 
