@@ -15,7 +15,7 @@ FileReaderNode::FileReaderNode(tbb::flow::graph& g)
 
         DataBlock block;
 
-        std::ifstream file("tone.raw", std::ios::binary);
+        std::ifstream file("input.raw", std::ios::binary);
 
         if (!file)
         {

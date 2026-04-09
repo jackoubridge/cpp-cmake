@@ -17,9 +17,3 @@ add_executable(my_app
 target_include_directories(my_app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(my_app PRIVATE TBB::tbb IPP::ipps)
-
-add_custom_command(TARGET my_app POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_SOURCE_DIR}/tone.raw
-        $<TARGET_FILE_DIR:my_app>/tone.raw
-)
